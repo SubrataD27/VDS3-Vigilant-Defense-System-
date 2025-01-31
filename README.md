@@ -1,94 +1,75 @@
 ﻿# VDS3-Vigilant-Defense-System-
-🛡️ VDS3 - Cyber Threat Detection System
 
-🚀 Overview
+stateDiagram-v2
+    direction TB
+    VDS3🛡️
 
-VDS3 is a state-of-the-art cyber threat detection system that leverages AI-powered traffic analysis, IoT network monitoring, and blockchain logging for secure threat intelligence. It integrates anomaly detection, real-time geolocation tracking, and decentralized security scoring to provide a robust defense mechanism against cyber threats.
+    %% 🎯 INITIAL DATA COLLECTION PHASE
+    [*] --> IoT_Network_Monitoring : 🚀 BEGIN THREAT DETECTION
+    
+    state IoT_Network_Monitoring {
+        direction TB
+        RaspberryPi --> ESP8266 : 🎛️ CAPTURE WI-FI PACKETS
+        ESP8266 --> GPSModule : 🌍 TRACK GEOLOCATION
+        GPSModule --> RTL_SDR : 📻 RADIO SIGNAL INTERCEPTION
+        RTL_SDR --> WiresharkZeek : 🔍 PACKET ANALYSIS & INSPECTION
+    }
 
-🔥 Key Features
+    %% 🔥 AI-POWERED TRAFFIC ANALYSIS
+    IoT_Network_Monitoring --> AI_Traffic_Classification : 🧠 AI-BASED ANALYSIS
+    
+    state AI_Traffic_Classification {
+        direction TB
+        TensorFlowModel --> XGBoostClassifier : 🤖 MACHINE LEARNING DETECTION
+        XGBoostClassifier --> DeepPacketInspection : 📊 NETWORK BEHAVIOR ANALYSIS
+        DeepPacketInspection --> ThreatIntelligence : 🚨 MALICIOUS ACTIVITY SCORING
+    }
 
-IoT Network Monitoring: Captures Wi-Fi packets using ESP8266, GPS tracking, and radio signal interception.
+    %% 🌍 THREAT INTELLIGENCE INTEGRATION
+    AI_Traffic_Classification --> ThreatIntelligence : 🔍 IDENTIFYING SUSPICIOUS ACTIVITY
 
-AI-Based Traffic Analysis: Uses TensorFlow and XGBoost for deep packet inspection and threat detection.
+    state ThreatIntelligence {
+        direction TB
+        Shodan --> AbuseIPDB : 🌐 IP REPUTATION SCANNING
+        AbuseIPDB --> VirusTotal : 🛡️ MALWARE DETECTION
+        VirusTotal --> BlockchainTrustScore : 🔗 TRUST-BASED SECURITY SCORE
+    }
 
-Threat Intelligence Integration: IP reputation scanning, malware detection, and decentralized security scoring.
+    %% 🔗 BLOCKCHAIN TRUST SCORING
+    ThreatIntelligence --> BlockchainTrustScore : 🔐 SECURE LOGGING SYSTEM
 
-Blockchain-Powered Security Logging: Hyperledger Fabric & Ethereum for immutable logs.
+    state BlockchainTrustScore {
+        direction TB
+        HyperledgerFabric --> EthereumNetwork : ⛓️ DECENTRALIZED TRANSACTION LOGGING
+        EthereumNetwork --> IPFS : 📦 IMMUTABLE STORAGE SYSTEM
+    }
 
-Real-Time Monitoring Dashboard: Web-based visualization with React, Django API, and Google Maps.
+    %% 📊 REAL-TIME MONITORING & VISUALIZATION
+    AI_Traffic_Classification --> WebDashboard : 📡 LIVE CYBER THREAT DASHBOARD
+    
+    state WebDashboard {
+        direction TB
+        DjangoAPI --> ReactFrontend : 🔌 DATA TRANSMISSION
+        ReactFrontend --> GoogleMapsAPI : 🌍 REAL-TIME GEOLOCATION TRACKING
+    }
 
-Alert & Notification System: MQTT, SMS, Telegram notifications, and law enforcement alerts.
+    %% ⚠️ ALERT SYSTEM & LAW ENFORCEMENT NOTIFICATIONS
+    WebDashboard --> AlertSystem : 🚨 TRIGGER SECURITY ALERTS
+    
+    state AlertSystem {
+        direction TB
+        MQTT --> LawEnforcement : 🚔 EMERGENCY NOTIFICATION TO CYBER POLICE
+        MQTT --> SMSAlert : 📩 REAL-TIME SMS ALERTS
+        MQTT --> TelegramNotification : 📨 SECURE MESSAGING FOR RESPONSE TEAMS
+    }
 
-🛠️ Tech Stack
+    %% 🕵️ DIGITAL FORENSIC LOGGING
+    AlertSystem --> ForensicLogging : 📜 SECURE INCIDENT REPORTING & AUDIT
+    
+    state ForensicLogging {
+        direction TB
+        BlockchainTrustScore --> SecureArchive : 🏛️ LONG-TERM SECURE STORAGE
+        SecureArchive --> CyberForensicsDatabase : 🔬 ADVANCED INVESTIGATION & EVIDENCE ANALYSIS
+    }
 
-Frontend
-
-React.js (TypeScript)
-
-Tailwind CSS
-
-Google Maps API (for geolocation tracking)
-
-Backend
-
-Django API
-
-Vite (for fast build and development)
-
-Cybersecurity Tools
-
-Wireshark & Zeek (Packet Analysis)
-
-TensorFlow, XGBoost (AI Threat Detection)
-
-AbuseIPDB, VirusTotal (Threat Intelligence)
-
-RTL-SDR (Radio Signal Interception)
-
-Blockchain Integration
-
-Hyperledger Fabric
-
-Ethereum Network
-
-IPFS (Immutable Storage)
-
-Communication & Alerts
-
-MQTT (Messaging Protocol)
-
-Telegram & SMS Alerts
-
-Law Enforcement API (Emergency Notifications)
-
-🏗️ Installation & Setup
-
-Prerequisites
-
-Node.js & npm
-
-Python (Django framework)
-
-Vite (for frontend)
-
-Steps
-
-Clone the repository:
-
-git clone https://github.com/your-repo/VDS3.git
-cd VDS3
-
-Install dependencies:
-
-npm install  # For frontend
-pip install -r requirements.txt  # For backend
-
-Run the backend server:
-
-python manage.py runserver
-
-Run the frontend:
-
-npm run dev
-
-Access the web dashboard at:
+    ForensicLogging --> [*] : 🔄 CONTINUOUS THREAT DETECTION & CYBERSECURITY MONITORING
