@@ -1,75 +1,53 @@
 ﻿# VDS3-Vigilant-Defense-System-
 
-stateDiagram-v2
-    direction TB
-    VDS3🛡️
+# 🛡️ VDS3 - Cyber Threat Detection System 🛡️
 
-    %% 🎯 INITIAL DATA COLLECTION PHASE
-    [*] --> IoT_Network_Monitoring : 🚀 BEGIN THREAT DETECTION
-    
-    state IoT_Network_Monitoring {
-        direction TB
-        RaspberryPi --> ESP8266 : 🎛️ CAPTURE WI-FI PACKETS
-        ESP8266 --> GPSModule : 🌍 TRACK GEOLOCATION
-        GPSModule --> RTL_SDR : 📻 RADIO SIGNAL INTERCEPTION
-        RTL_SDR --> WiresharkZeek : 🔍 PACKET ANALYSIS & INSPECTION
-    }
+## 🔥 Overview
+VDS3 is an advanced **AI-powered cyber threat detection system** that leverages **IoT, AI, blockchain, and forensic logging** to detect, analyze, and mitigate cyber threats in real time. It integrates **machine learning models, network traffic analysis, and blockchain-based trust scoring** to provide robust security against cyber threats.
 
-    %% 🔥 AI-POWERED TRAFFIC ANALYSIS
-    IoT_Network_Monitoring --> AI_Traffic_Classification : 🧠 AI-BASED ANALYSIS
-    
-    state AI_Traffic_Classification {
-        direction TB
-        TensorFlowModel --> XGBoostClassifier : 🤖 MACHINE LEARNING DETECTION
-        XGBoostClassifier --> DeepPacketInspection : 📊 NETWORK BEHAVIOR ANALYSIS
-        DeepPacketInspection --> ThreatIntelligence : 🚨 MALICIOUS ACTIVITY SCORING
-    }
+## ✨ Features
+- 🚀 **Real-time Threat Detection** using AI-based **Deep Packet Inspection (DPI)**
+- 🌍 **Geolocation Tracking** via GPS integration for cyber threat sources
+- 📡 **IoT-Based Packet Capture** using **Raspberry Pi + ESP8266**
+- 🔍 **Network Behavior Analysis** with **XGBoost & TensorFlow models**
+- 🔗 **Blockchain Trust Score** with **Hyperledger Fabric & Ethereum**
+- 📊 **Live Cyber Threat Dashboard** built with **Django, React & Google Maps API**
+- ⚠️ **Automated Alert System** via **MQTT, SMS, Telegram & Law Enforcement**
+- 🕵️ **Secure Forensic Logging** for post-attack investigation & auditing
 
-    %% 🌍 THREAT INTELLIGENCE INTEGRATION
-    AI_Traffic_Classification --> ThreatIntelligence : 🔍 IDENTIFYING SUSPICIOUS ACTIVITY
+## 🛠️ Tech Stack
+### **🔹 IoT & Network Monitoring**
+- **Raspberry Pi** 🖥️ - Packet sniffing  
+- **ESP8266** 📡 - Wi-Fi packet analysis  
+- **RTL-SDR** 📻 - Radio frequency interception  
+- **Wireshark / Zeek** 🔍 - Network packet inspection  
 
-    state ThreatIntelligence {
-        direction TB
-        Shodan --> AbuseIPDB : 🌐 IP REPUTATION SCANNING
-        AbuseIPDB --> VirusTotal : 🛡️ MALWARE DETECTION
-        VirusTotal --> BlockchainTrustScore : 🔗 TRUST-BASED SECURITY SCORE
-    }
+### **🔹 AI-Powered Traffic Classification**
+- **TensorFlow** 🤖 - Deep Learning Model  
+- **XGBoost** 📊 - Machine Learning-based anomaly detection  
+- **DPI (Deep Packet Inspection)** 🔬 - Protocol-based traffic analysis  
 
-    %% 🔗 BLOCKCHAIN TRUST SCORING
-    ThreatIntelligence --> BlockchainTrustScore : 🔐 SECURE LOGGING SYSTEM
+### **🔹 Threat Intelligence & Blockchain**
+- **Shodan / AbuseIPDB / VirusTotal** 🌍 - Threat intelligence database  
+- **Hyperledger Fabric / Ethereum** ⛓️ - Decentralized logging & Trust Scoring  
+- **IPFS** 📦 - Secure and tamper-proof storage  
 
-    state BlockchainTrustScore {
-        direction TB
-        HyperledgerFabric --> EthereumNetwork : ⛓️ DECENTRALIZED TRANSACTION LOGGING
-        EthereumNetwork --> IPFS : 📦 IMMUTABLE STORAGE SYSTEM
-    }
+### **🔹 Web & Visualization**
+- **Django + REST API** 🔌 - Backend API  
+- **React + Google Maps API** 🗺️ - Frontend & geolocation mapping  
+- **MQTT / WebSockets** 📡 - Real-time data transmission  
 
-    %% 📊 REAL-TIME MONITORING & VISUALIZATION
-    AI_Traffic_Classification --> WebDashboard : 📡 LIVE CYBER THREAT DASHBOARD
-    
-    state WebDashboard {
-        direction TB
-        DjangoAPI --> ReactFrontend : 🔌 DATA TRANSMISSION
-        ReactFrontend --> GoogleMapsAPI : 🌍 REAL-TIME GEOLOCATION TRACKING
-    }
+### **🔹 Alerting & Forensic Logging**
+- **MQTT + Telegram API + Twilio SMS** ⚠️ - Instant alerts  
+- **Secure Archive & Forensic Database** 🕵️ - Cybersecurity evidence preservation  
 
-    %% ⚠️ ALERT SYSTEM & LAW ENFORCEMENT NOTIFICATIONS
-    WebDashboard --> AlertSystem : 🚨 TRIGGER SECURITY ALERTS
-    
-    state AlertSystem {
-        direction TB
-        MQTT --> LawEnforcement : 🚔 EMERGENCY NOTIFICATION TO CYBER POLICE
-        MQTT --> SMSAlert : 📩 REAL-TIME SMS ALERTS
-        MQTT --> TelegramNotification : 📨 SECURE MESSAGING FOR RESPONSE TEAMS
-    }
+## 🚀 Installation & Setup
+### **1️⃣ Prerequisites**
+- 🛠️ Install Python 3.x, Node.js, and Docker  
+- 📡 Ensure Raspberry Pi, ESP8266, and RTL-SDR hardware are available  
+- 🔗 Setup blockchain nodes (Ethereum / Hyperledger)  
 
-    %% 🕵️ DIGITAL FORENSIC LOGGING
-    AlertSystem --> ForensicLogging : 📜 SECURE INCIDENT REPORTING & AUDIT
-    
-    state ForensicLogging {
-        direction TB
-        BlockchainTrustScore --> SecureArchive : 🏛️ LONG-TERM SECURE STORAGE
-        SecureArchive --> CyberForensicsDatabase : 🔬 ADVANCED INVESTIGATION & EVIDENCE ANALYSIS
-    }
-
-    ForensicLogging --> [*] : 🔄 CONTINUOUS THREAT DETECTION & CYBERSECURITY MONITORING
+### **2️⃣ Clone the Repository**
+```bash
+git clone https://github.com/yourusername/VDS3-Cyber-Threat-Detection.git
+cd VDS3-Cyber-Threat-Detection
