@@ -1,6 +1,12 @@
-﻿# VDS3-Vigilant-Defense-System-
-
 # 🛡️ VDS3 - Cyber Threat Detection System 🛡️
+## 🏆 **CyberHack 2025**
+
+### 🚀 Built By: **Team Mahakumbh**  
+- **Subrata Dhibar**  
+- **Chandrakanta Jena**  
+- **Raja Babu Sahu**  
+
+
 
 ## 🔥 Overview
 VDS3 is an advanced **AI-powered cyber threat detection system** that leverages **IoT, AI, blockchain, and forensic logging** to detect, analyze, and mitigate cyber threats in real time. It integrates **machine learning models, network traffic analysis, and blockchain-based trust scoring** to provide robust security against cyber threats.
