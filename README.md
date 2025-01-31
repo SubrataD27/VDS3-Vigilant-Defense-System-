@@ -4,7 +4,10 @@
 ### 🚀 Built By: **Team Mahakumbh**  
 - **Subrata Dhibar**  
 - **Chandrakanta Jena**  
-- **Raja Babu Sahu**  
+- **Raja Babu Sahu**
+
+## 🌐 Live Dashboard  
+🔗 **Access VDS3 Cyber Threat Dashboard**: [Click Here](https://your-dashboard-link.com)
 
 
 
@@ -57,3 +60,10 @@ VDS3 is an advanced **AI-powered cyber threat detection system** that leverages 
 ```bash
 git clone https://github.com/yourusername/VDS3-Cyber-Threat-Detection.git
 cd VDS3-Cyber-Threat-Detection
+```
+
+## 📸 System Overview
+![System Architecture](assets/system-architecture.png)
+
+## 📊 AI Threat Detection Workflow
+![AI Model Analysis](assets/ai-threat-detection.png)
