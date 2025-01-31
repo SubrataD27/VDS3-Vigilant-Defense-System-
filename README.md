@@ -7,7 +7,7 @@
 - **Raja Babu Sahu**
 
 ## 🌐 Live Dashboard  
-🔗 **Access VDS3 Cyber Threat Dashboard**: [Click Here]((https://team-mahakumbh-2-0.netlify.app/))
+🔗 **Access VDS3 Cyber Threat Dashboard**: [Click Here](https://team-mahakumbh-2-0.netlify.app/)
 
 
 
